@@ -1,0 +1,28 @@
+# Visual Studio
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# ASP.NET
+wwwroot/
+*.db
+*.bak
+
+# Angular
+node_modules/
+dist/
+*.log
+*.tgz
+package-lock.json
+npm-debug.log*
+
+# Visual Studio Code
+.vscode/
+.history/
+.vs/

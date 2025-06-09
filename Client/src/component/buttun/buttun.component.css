@@ -1,0 +1,32 @@
+.designButton {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(15, 15, 14); 
+    background-color: rgb(255, 255, 255); 
+    border: none;
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    /* height: 55px; */
+    border-radius: 8px;
+}
+.addToCart{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    height: 40px;
+    margin-right: 110px;
+    cursor: pointer; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+ }
+ .fa-solid {
+    margin-right: 5px;
+    color: rgb(4, 4, 4);
+    font-size: 24px; /* שינוי גודל האייקון */
+}
+
+

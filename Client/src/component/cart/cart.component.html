@@ -1,0 +1,65 @@
+<main>
+  <section class="header d-flex align-items-center justify-content-between mb-4">
+    <h1 class="buy">🛒עגלת הקניות שלי</h1>
+  </section>
+  <section class="job-openings">
+    <div *ngFor="let product of products" class="infos d-flex p-3 bg-white rounded-4 mb-3">
+      <!-- צורת שליפה מהts -->
+      <h5>{{product.product.nameProduct}}</h5>
+      <img class="card-img-top" src="{{product.product.picture}}" alt="Card image" style="height: 60px; width: 60px;">
+      <div class="location">
+        <span>{{product.product.price | currency: 'ILS'}}</span>
+      </div>
+      <div class="quntity">
+        <!-- חשוב כמות -->
+        <button class="quntityButtun" (click)="count(false, product)" 
+        >-</button>
+        <p class="quntityP">{{product.quantity}}</p>
+        <button class="quntityButtun" (click)="count(true, product)">+</button>
+        <!-- שימוש בקומפוננטת בן בשביל האיקון -->
+        <app-buttun  id="uu" (click)="delete(product)"   class="designButton"  icon="fa-solid fa-trash"></app-buttun>
+      </div>
+    </div>
+  </section>
+
+  <button (click)="openDialog()"appDirective><i class="fa-regular fa-credit-card"></i>לתשלום</button>
+  <dialog id="dialogOne" style="display: none;">
+    <app-buttun (click)="closeDialog()"  class="designButton" id="closeDialog1"   icon="fa-solid fa-times"></app-buttun>
+
+    <h1 class="pay">תשלום</h1>
+    <h4 class="pay3">{{sum()}}:הסכום לתשלום</h4>
+    <div class="mb-3">
+      <label for="text">הערה:</label>
+      <input type="text" class="form-control" id="remark" placeholder="הכנס הערה" name="remark" [(ngModel)]="remark">
+  </div>
+    <p class="p">כתובת משלוח:</p>
+    <div class="mb-3">
+      <label for="email">עיר:</label>
+      <input type="text" class="form-control" placeholder="הכנס שם עיר" required>
+    </div>
+    <div class="mb-3">
+      <label for="email">רחוב:</label>
+      <input type="text" class="form-control" placeholder="הכנס רחוב">
+    </div>
+    <div class="mb-3">
+      <label for="email">מספר דירה:</label>
+      <input type="text" class="form-control" placeholder="הכנס מס' דירה">
+    </div>
+    <p class="p">פרטי כרטיס אשראי:</p>
+    <div class="mb-3">
+      <label for="email">מספר כרטיס:</label>
+      <input type="text" class="form-control" placeholder="הכנס מספר כרטיס">
+    </div>
+    <div class="mb-3">
+      <label for="email">תוקף:</label>
+      <input type="text" class="form-control" placeholder="הכנס תוקף">
+    </div>
+    <div class="mb-3">
+      <label for="email">CVV:</label>
+      <input type="text" class="form-control" placeholder="הכנס CVV" >
+    </div>
+    <div class="button-container">
+      <app-buttun (click)="add()"   class="designButton" id="topay" word="לתשלום"  icon="fa-solid fa-credit-card"></app-buttun>
+  </div>
+  </dialog>
+</main>

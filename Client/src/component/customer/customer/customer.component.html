@@ -1,0 +1,56 @@
+<div class="warp">
+<div class="container mt-3">
+  <!-- משתנה בוליאני אם הרשמה או התחברות -->
+<button class="button" (click)="loginOrRegister(true)">הרשמה</button>
+<button class="button" (click)="loginOrRegister(false)">התחברות</button>
+@if(loginOrRegiste){
+<!-- הטופס מכיל בדיקות תקינות -->
+<h1>:הוספת לקוח</h1>
+ <form (ngSubmit)="send()" #myForm="ngForm">
+<div class="mb-3">
+   <label for="n">שם פרטי:</label>
+   <input type="text" class="form-control" id="NameCustomer" [(ngModel)]="newCustomer.nameCustomer"
+    placeholder="הכנס שם" name="NameCustomer">
+ </div>
+ <div class="mb-3 mt-3">
+   <label for="stock">טלפון :</label>
+   <input type="text" class="form-control" id="phone" [(ngModel)]="newCustomer.phone"
+   placeholder="הכנס טלפון" name="phone" #validPhone="ngModel" required pattern="^(05[0-9]{8})$" maxlength="10">
+   @if(validPhone.invalid && (validPhone.touched || validPhone.dirty)){
+     <h6 style="color: red; font-size: smaller;" [hidden]="!validPhone.errors!['required']">זהו שדה חובה</h6>
+     <h6 style="color: red; font-size: smaller;" [hidden]="!validPhone.errors!['pattern']">טלפון לא תקינה</h6>}
+ </div>
+ <div class="mb-3">
+   <label for="pic"> מייל:</label>
+   <input type="text" class="form-control" id="email" [(ngModel)]="newCustomer.email"
+          placeholder="הכנס מייל" name="email" (blur)="newCustomer.email ? checkEmail1(newCustomer.email) : null">
+   <h6 *ngIf="emailExists" style="color: red; font-size: smaller;">המייל כבר קיים, אנא הכנס מייל אחר.</h6>
+</div>
+ <div class="mb-3">
+   <label for="pic"> תאריך לידה:</label>
+   <input type="text" class="form-control" id="dateBirth" [(ngModel)]="newCustomer.dateBirth"
+    placeholder="הכנס תאריך לידה" name="dateBirth">
+    <button type="submit" class="button" [disabled]="myForm.invalid">שליחה</button>
+   </div>
+</form>
+}
+<!-- התחברות -->
+@else{
+<form (ngSubmit)="sendLogin(email)">
+   <h1>התחברות</h1>
+  <div class="mb-3 mt-3">
+   <label for="stock">טלפון :</label>
+   <input type="text" class="form-control" id="phone" [(ngModel)]="newCustomer.phone"
+   placeholder="הכנס טלפון" name="phone" #validPhone="ngModel" required pattern="^(05[0-9]{8})$" maxlength="10">
+   @if(validPhone.invalid && (validPhone.touched || validPhone.dirty)){
+     <h6 style="color: red; font-size: smaller;" [hidden]="!validPhone.errors!['required']">זהו שדה חובה</h6>
+     <h6 style="color: red; font-size: smaller;" [hidden]="!validPhone.errors!['pattern']">טלפון לא תקינה</h6>}
+ </div>
+   <div class="mb-3">
+       <label for="email">מייל:</label>
+       <input type="text" class="form-control" id="email" placeholder="הכנס מייל" name="email" [(ngModel)]="email">
+   </div>
+   <button type="submit" class="button">שליחה</button>
+</form>
+}
+</div></div>

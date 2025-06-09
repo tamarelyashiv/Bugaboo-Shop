@@ -1,0 +1,77 @@
+.red-border{
+    border: 2px solid rgb(0, 0, 0); /* הוספת סוג גבול ורוחב */
+
+}
+.green-border{
+    border: 2px solid rgb(214, 128, 15); /* הוספת סוג גבול ורוחב */
+
+}
+body {
+    margin-top: 90px; /* גובה ה-navbar, תוודא שזה תואם לגובה בפועל */
+}
+/* .sort-price{
+    height: 10%;
+    width: 10%;
+    color: rgb(13, 13, 13);
+
+}
+.sort-alef{
+    height: 10%;
+    width: 10%;
+    color: rgb(13, 13, 13);
+} */
+.sort-price, .sort-alef,.details {
+    height: 50px; /* גובה הכפתור */
+    width: 150px; /* רוחב הכפתור */
+    color: #0c0c0c; /* צבע טקסט */
+    background-color: rgb(243, 240, 240); /* צבע רקע */
+    border: none; /* הסרת גבול */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* מחוון עכבר */
+    transition: background-color 0.3s, transform 0.2s; /* אנימציה */
+    display: flex; /* שימוש ב-flexbox */
+    align-items: center; /* מרכז את התוכן אנכית */
+    justify-content: center; /* מרכז את התוכן אופקית */
+}
+.sort-alef{
+    margin-left: 10px;
+}
+.sort-price:hover, .sort-alef:hover, .details:hover {
+    background-color: rgb(253, 249, 249); /* צבע רקע כשעוברים עם העכבר */
+    transform: scale(1.05); /* הגדלה קלה */
+}
+
+button {
+    background-color: #b27133; /* גוון חום כהה */
+    color: white; /* צבע טקסט לבן */
+    border: none; /* ללא גבולות */
+    border-radius: 5px; /* פינות מעוגלות */
+    padding: 10px 20px; /* ריווח פנימי */
+    font-size: 16px; /* גודל גופן */
+    cursor: pointer; /* שינוי סמן העכבר */
+    transition: background-color 0.3s, transform 0.2s; /* אנימציה בזמן המעבר */
+}
+
+button:hover {
+    background-color: #6f4d2e; /* גוון חום כהה יותר בעת ריחוף */
+    transform: scale(1.05); /* הגדלה קלה בעת ריחוף */
+}
+
+button:active {
+    background-color: #5b3e26; /* גוון חום כהה עוד יותר בעת לחיצה */
+    transform: scale(0.95); /* הקטנה קלה בעת לחיצה */
+}
+.sort{
+    display: flex;
+    
+}
+.search1{
+    margin-left: 40%;
+}
+
+
+
+
+
+
+

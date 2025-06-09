@@ -1,0 +1,39 @@
+/* עיצוב בסיסי ל-navbar */
+.navbar {
+    background-color:white; /* צבע רקע בהיר */
+    border-bottom: 2px solid #c0723f; /* קו תחתון כחול */
+    position: fixed; /* קובע את ה-navbar במיקום קבוע */
+    top: 0; /* מיקום בחלק העליון של הדף */
+    width: 100%; /* לוודא שה-navbar תופס את כל רוחב הדף */
+    z-index: 1000; /* מבטיח שה-navbar יהיה מעל לתוכן אחר */
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 25px; /* גודל הגופן */
+    color: #c0723f; /* צבע טקסט כחול */
+    padding: 10px 15px; /* רווחים סביב כל קישור */
+    transition: background-color 0.3s, color 0.3s; /* אנימציה לשינוי צבע */
+}
+
+/* שינוי צבע כאשר העכבר מרחף מעל הקישור */
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: rgb(198, 196, 196); /* צבע רקע אפור בהיר */
+    color: #611f04; /* צבע טקסט כהה יותר */
+    border-radius: 5px; /* פינות מעוגלות */
+}
+
+/* עיצוב עבור הקישור הפעיל */
+.navbar-nav .nav-item .nav-link.active {
+    background-color: #5c3403; /* צבע רקע כחול */
+    color: white; /* צבע טקסט לבן */
+    border-radius: 5px; /* פינות מעוגלות */
+}
+
+/* עיצוב התגית router-outlet */
+router-outlet {
+    margin-top: 0; /* אין רווח מעל התוכן המוצג */
+}
+
+#logo{
+    margin-left: 980px;
+}

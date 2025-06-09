@@ -1,0 +1,63 @@
+<html lang="en">
+<body>
+    <div class="container mt-3">
+        <div class="row">
+           
+            @for(p of allP; track p.productId)
+            {
+            <div class="col-md-4">
+                <div class="card mb-4" [ngClass]="p && p.quantity!== undefined ? (p.quantity===0 ? 'red-border' : 'green-border'):''"> </div>
+                    <img class="card-img-top" src="{{p.picture}}" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">{{p.nameProduct}}</h4>
+                        <p class="card-text">{{p.price | currency:'ILS'}}</p>
+                        <app-buttun  id="uu" (click)="details(p.productId)"   class="designButton"  word="לפרטים נוספים" icon="fa-solid fa-bars"></app-buttun>
+                    </div>
+               
+            </div>
+        }
+        </div>
+    </div>
+    <div class="sort">
+    <div>
+        <button (click)="tosortprice()" class="sort-price" appDirective newColor="brown">מיון לפי מחיר:</button>
+    </div>
+    <div>
+        <button (click)="tosortalef()" class="sort-alef" appDirective newColor="brown">מיון לפי a-b:</button>
+    </div>
+   
+    <!-- <div class="search1">
+        <app-buttun   (click)="search()"  word="לחיפוש" icon="fa-solid fa-search"></app-buttun>
+        <label for="categoryId">קטגוריה:</label>
+        <input type="number" id="categoryId" [(ngModel)]="categoryId" />
+
+        <label for="modelId">מודל:</label>
+        <input type="number" id="modelId" [(ngModel)]="modelId" />
+    </div>  -->
+</div>
+
+    <!-- <div *ngIf="product">
+        <h2>תוצאות חיפוש:</h2>
+        <div class="product-details">
+            <h4>שם מוצר: {{ product.NameProduct }}</h4>
+            <p>מחיר: {{ product.Price | currency:'ILS' }}</p>
+            <img [src]="product.Picture" alt="{{ product.NameProduct }}" style="width:100%"> -->
+        <!-- </div>
+    </div> -->
+     <div *ngIf="products.length > 0">
+        <h2>תוצאות חיפוש:</h2>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let product of products">
+                <div class="card mb-4">
+                    <img class="card-img-top" [src]="product.picture" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">{{product.nameProduct}}</h4>
+                        <p class="card-text">{{product.price | currency:'ILS'}}</p>
+                        <app-buttun  id="uu" (click)="details(product.productId)"   class="designButton"  word="לפרטים נוספים" icon="fa-solid fa-angle-double-left"></app-buttun>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

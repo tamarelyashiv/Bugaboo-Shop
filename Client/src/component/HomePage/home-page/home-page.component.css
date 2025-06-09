@@ -1,0 +1,105 @@
+.content {
+    margin-top: 90px; /* גובה ה-navbar, תוודא שזה תואם לגובה בפועל */
+}
+.homepage {
+    background-image: url('/דף בית.jpg'); /* החלף עם הנתיב לתמונה שלך */
+    height: 100vh; /* גובה של 100% מהגובה של חלון הדפדפן */
+    background-size: cover; /* מכסה את כל האזור */
+    position: relative; /* הכרחי למיקום יחסי של overlay */
+  }
+  .homepage {
+    position: relative; /* מאפשר למקם את התוכן יחסית להורה */
+  }
+  
+  .overlay-text {
+    position: absolute; /* מאפשר למקם את הטקסט מעל התמונה */
+    top: calc(50% - 5cm); /* מיקום הכותרת הראשית */
+    left: calc(50% + 12cm); /* מיקום הכותרת הראשית */
+    transform: translate(-50%, -50%); /* ממרכז את התוכן */
+    color: rgb(6, 6, 6); /* צבע הטקסט */
+    text-align: center; /* מרכז את הטקסט */
+    font-size: 2.5em; /* גודל טקסט מוגבר לכותרת הראשית */
+    font-weight: bold; /* מדגיש את הכותרת הראשית */
+    white-space: nowrap; /* מונע ירידת שורה */
+  }
+  
+  h3 {
+    position: absolute; /* מאפשר למקם את הכותרת המשנה */
+    top: calc(50% - 1cm); /* מיקום הכותרת המשנה מתחת לכותרת הראשית */
+    left: calc(50% + 12cm); /* מיקום הכותרת המשנה תואם לכותרת הראשית */
+    transform: translate(-50%, -50%); /* ממרכז את התוכן */
+    color: rgb(5, 5, 5); /* צבע הטקסט */
+    text-align: center; /* מרכז את הטקסט */
+    white-space: nowrap; /* מונע ירידת שורה */
+  }
+  html, body {
+    margin: 0; /* מסיר רווחים ברירת מחדל */
+    height: 100%; /* גובה של 100% */
+}
+
+.container {
+    display: flex; /* מאפשר פריסה בשורה */
+    width: 100%; /* תופס את כל רוחב המסך */
+}
+
+.image-container {
+    background-image: url('/ררקע.jpg'); /* החלף עם הנתיב לתמונה שלך */
+    height: 60vh; /* גובה של חצי מהגובה של חלון הדפדפן */
+    background-size: cover; /* מכסה את כל האזור */
+    width: 50%; /* רוחב של חצי מהמסך */
+    /* הסר את margin-right */
+}
+
+.text-container {
+    width: 50%; /* רוחב של חצי מהמסך */
+    display: flex;
+    flex-direction: column; /* מאפשר פריסה אנכית */
+    justify-content: center; /* מרכז את התוכן אנכית */
+    padding: 20px; /* רווחים פנימיים */
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.image-container {
+    width: 50%; /* רוחב התמונה יהיה 50% מהמסך */
+}
+
+
+
+.content {
+    width: 50%; /* שאר התוכן יקח 50% מהמסך */
+    padding: 20px; /* ריווח פנימית */
+    box-sizing: border-box; /* כולל ריווח ברוחב */
+    text-align: center;
+}
+.footer {
+    background-image: url('/footer.png'); /* החלף עם הנתיב לתמונה שלך */
+    height: 100vh; 
+    background-size: cover; /* מכסה את כל האזור */
+    position: relative; /* הכרחי למיקום יחסי של overlay */
+    margin-bottom: 200px;
+  }
+button {
+    background-color: #b27133; /* גוון חום כהה */
+    color: white; /* צבע טקסט לבן */
+    border: none; /* ללא גבולות */
+    border-radius: 5px; /* פינות מעוגלות */
+    padding: 10px 20px; /* ריווח פנימי */
+    font-size: 16px; /* גודל גופן */
+    cursor: pointer; /* שינוי סמן העכבר */
+    transition: background-color 0.3s, transform 0.2s; /* אנימציה בזמן המעבר */
+}
+
+button:hover {
+    background-color: #6f4d2e; /* גוון חום כהה יותר בעת ריחוף */
+    transform: scale(1.05); /* הגדלה קלה בעת ריחוף */
+}
+
+button:active {
+    background-color: #5b3e26; /* גוון חום כהה עוד יותר בעת לחיצה */
+    transform: scale(0.95); /* הקטנה קלה בעת לחיצה */
+}
+
