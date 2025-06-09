@@ -1,4 +1,4 @@
-# Bugaboo Shop – Full Stack Web Application
+# Bugaboo Shop
 
 ## 🛒 Overview  
 This is a full-stack web application for managing a Bugaboo products shop, built with:
