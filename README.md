@@ -1,7 +1,7 @@
-# Bugabbo Shop – Full Stack Web Application
+# Bugaboo Shop – Full Stack Web Application
 
 ## 🛒 Overview  
-This is a full-stack web application for managing a Bugabbo products shop, built with:
+This is a full-stack web application for managing a Bugaboo products shop, built with:
 
 - 🌐 **Backend:** ASP.NET Core Web API using Layered Architecture and Dependency Injection (DI)  
 - 🖥️ **Frontend:** Angular client application  
